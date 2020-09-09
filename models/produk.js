@@ -10,14 +10,13 @@ const produkSchema = new Schema({
     type: Number,
   },
   harga_jual: {
-    type: String,
+    type: Number,
   },
   stok: {
     type: Number,
   },
   foto_barang: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
 });
 
