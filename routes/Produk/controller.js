@@ -49,4 +49,21 @@ module.exports = {
       res.send(error);
     }
   },
+
+  //filterbyname
+  filterByName: async (req, res) => {
+    const product = req.query.product;
+    try {
+      const result = await Produk.find({
+        nama_produk: {
+          $regex: product,
+          $options: "i",
+        },
+      });
+
+      res.send(result);
+    } catch (error) {
+      res.send(error);
+    }
+  },
 };
